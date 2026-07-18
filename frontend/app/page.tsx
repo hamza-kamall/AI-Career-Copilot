@@ -3,7 +3,11 @@
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
 
-import { isDemoAuthenticated, setDemoAuthenticated } from "./lib/storage";
+import { BrandLogo } from "./components/BrandLogo";
+import { getDemoRole, isDemoAuthenticated, signInDemo } from "./lib/storage";
+
+const ADMIN_EMAIL = "admin@career.local";
+const ADMIN_PASSWORD = "admin123";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -12,18 +16,22 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (isDemoAuthenticated()) {
-      router.replace("/profile-builder");
+      router.replace(getDemoRole() === "admin" ? "/admin/mentors" : "/profile-builder");
     }
   }, [router]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setDemoAuthenticated(true);
-    router.push("/profile-builder");
+    const role =
+      email.trim().toLowerCase() === ADMIN_EMAIL && password === ADMIN_PASSWORD
+        ? "admin"
+        : "learner";
+    signInDemo(role);
+    router.push(role === "admin" ? "/admin/mentors" : "/profile-builder");
   }
 
   function startDemo(path = "/profile-builder") {
-    setDemoAuthenticated(true);
+    signInDemo("learner");
     router.push(path);
   }
 
@@ -32,8 +40,7 @@ export default function LoginPage() {
       <section className="hero-section">
         <nav className="marketing-nav" aria-label="Primary navigation">
           <a className="brand marketing-brand" href="#top">
-            <span className="brand-mark">AI</span>
-            <span>AI Career Pilot</span>
+            <BrandLogo variant="marketing" />
           </a>
           <div className="marketing-links">
             <a href="#how-it-works">How It Works</a>
@@ -56,8 +63,9 @@ export default function LoginPage() {
             <p className="eyebrow hero-eyebrow">Personalized AI career planning</p>
             <h1>Build your career with a plan designed for you.</h1>
             <p className="hero-text">
-              Describe your goals, skills, and constraints. AI Career Pilot creates a
-              personalized roadmap and connects you with the right mentors.
+              Describe your goals, strengths, constraints, and field of interest.
+              BootCamp.AI creates a personalized roadmap and connects you with the
+              right mentors across tech, business, design, research, and creative paths.
             </p>
             <div className="button-row hero-actions">
               <button className="primary-button hero-button" onClick={() => startDemo()} type="button">
@@ -73,7 +81,7 @@ export default function LoginPage() {
             <div className="profile-card-header">
               <div>
                 <p className="eyebrow">Profile readiness</p>
-                <h2>Data Analyst Track</h2>
+                <h2>Career Launch Track</h2>
               </div>
               <span className="profile-score">82%</span>
             </div>
@@ -83,7 +91,7 @@ export default function LoginPage() {
             <div className="career-card-grid">
               <div>
                 <span>Goal</span>
-                <strong>Junior data analyst</strong>
+                <strong>First role or internship</strong>
               </div>
               <div>
                 <span>Timeline</span>
@@ -95,7 +103,7 @@ export default function LoginPage() {
               </div>
               <div>
                 <span>Mentor match</span>
-                <strong>Python + SQL</strong>
+                <strong>Field-fit coach</strong>
               </div>
             </div>
             <div className="roadmap-preview">
@@ -106,7 +114,7 @@ export default function LoginPage() {
               <span className="preview-step purple">3</span>
             </div>
             <div className="resource-strip">
-              <span>SQL portfolio project</span>
+              <span>Portfolio or work-sample sprint</span>
               <strong>Next up</strong>
             </div>
           </section>
@@ -122,24 +130,24 @@ export default function LoginPage() {
           <article className="feature-card">
             <span className="feature-icon">01</span>
             <h3>Personalized Career Roadmap</h3>
-            <p>Get a structured learning plan based on your current skills, timeline, and availability.</p>
+            <p>Get a structured plan based on your field, current strengths, timeline, and availability.</p>
           </article>
           <article className="feature-card">
             <span className="feature-icon purple">02</span>
             <h3>Matched with the Right Mentor</h3>
-            <p>Discover mentors ranked according to your goals, level, language, and preferences.</p>
+            <p>Discover mentors ranked according to your goals, level, language, budget, and preferences.</p>
           </article>
           <article className="feature-card" id="resources">
             <span className="feature-icon">03</span>
             <h3>Verified Learning Resources</h3>
-            <p>Learn from curated courses, documentation, projects, and tutorials without random or broken links.</p>
+            <p>Learn from curated courses, guides, projects, case studies, and communities without random or broken links.</p>
           </article>
         </div>
       </section>
 
       <section className="login-section" id="login">
         <div className="login-card">
-          <p className="eyebrow">AI Career Pilot</p>
+          <p className="eyebrow">BootCamp.AI</p>
           <h2>Log in to your workspace</h2>
           <p className="muted">Sign in to continue your career planning demo.</p>
           <form className="form-stack" onSubmit={handleSubmit}>
@@ -166,7 +174,7 @@ export default function LoginPage() {
             </button>
           </form>
           <p className="fine-print">
-            Demo auth stores only a local browser flag. No real account is created.
+            Admin demo credentials: admin@career.local / admin123. Demo auth stores only a local browser flag.
           </p>
         </div>
       </section>

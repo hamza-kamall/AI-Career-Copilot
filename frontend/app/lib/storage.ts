@@ -3,6 +3,7 @@
 import type { UserProfile } from "./types";
 
 const AUTH_KEY = "career-copilot-auth";
+const ROLE_KEY = "career-copilot-role";
 const PROFILE_KEY = "career-copilot-profile";
 const PROMPT_KEY = "career-copilot-last-prompt";
 const CHAT_KEY = "career-copilot-chat";
@@ -15,12 +16,37 @@ export type StoredChatMessage = {
   items?: string[];
 };
 
+export type DemoRole = "learner" | "admin";
+
 export function isDemoAuthenticated() {
   return window.localStorage.getItem(AUTH_KEY) === "true";
 }
 
 export function setDemoAuthenticated(value: boolean) {
   window.localStorage.setItem(AUTH_KEY, String(value));
+  if (!value) {
+    window.localStorage.removeItem(ROLE_KEY);
+  }
+}
+
+export function getDemoRole(): DemoRole {
+  return window.localStorage.getItem(ROLE_KEY) === "admin" ? "admin" : "learner";
+}
+
+export function setDemoRole(role: DemoRole) {
+  window.localStorage.setItem(ROLE_KEY, role);
+}
+
+export function signInDemo(role: DemoRole = "learner") {
+  setDemoAuthenticated(true);
+  setDemoRole(role);
+}
+
+export function signOutDemo() {
+  setDemoAuthenticated(false);
+  window.localStorage.removeItem(PROFILE_KEY);
+  window.localStorage.removeItem(PROMPT_KEY);
+  window.localStorage.removeItem(CHAT_KEY);
 }
 
 export function saveProfile(profile: UserProfile) {

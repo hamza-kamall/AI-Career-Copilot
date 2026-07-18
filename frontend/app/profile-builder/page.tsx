@@ -134,7 +134,7 @@ export default function ProfileBuilderPage() {
           <div className="section-heading">
             <div>
               <p className="eyebrow">Generated resume card</p>
-              <h2>{profile?.target_role ?? "Profile preview"}</h2>
+              <h2>{profile?.target_role ? displayPhrase(profile.target_role) : "Profile preview"}</h2>
             </div>
             <span className="score-ring">{profile ? "75%" : "0%"}</span>
           </div>
@@ -149,9 +149,9 @@ const defaultMessages: StoredChatMessage[] = [
   {
     id: "welcome",
     role: "ai",
-    title: "AI Career Copilot",
+    title: "BootCamp.AI",
     body:
-      "Tell me your current situation, target role, skills, timeline, budget, and weekly availability.",
+      "Tell me your current situation, field of interest, target role or outcome, strengths, timeline, budget, and weekly availability.",
   },
 ];
 
@@ -171,8 +171,8 @@ function ProfileSummary({ profile }: { profile: UserProfile }) {
       <InfoBlock title="Current situation" value={profile.current_situation || "Not provided"} />
       <InfoBlock title="Timeline" value={profile.deadline_months ? `${profile.deadline_months} months` : "Not provided"} />
       <InfoBlock title="Weekly time" value={profile.hours_per_week ? `${profile.hours_per_week} hours` : "Not provided"} />
-      <InfoBlock title="Experience" value={profile.experience_level ?? "Not provided"} />
-      <InfoBlock title="Budget" value={profile.budget_preference ?? "Not provided"} />
+      <InfoBlock title="Experience" value={displayPhrase(profile.experience_level ?? "Not provided")} />
+      <InfoBlock title="Budget" value={displayPhrase(profile.budget_preference ?? "Not provided")} />
       <TagBlock title="Skills" values={profile.current_skills} />
       <TagBlock title="Learning style" values={profile.learning_preferences} />
       <TagBlock title="Languages" values={profile.languages} />
@@ -197,12 +197,27 @@ function TagBlock({ title, values }: { title: string; values: string[] }) {
       <div className="tag-list">
         {(values.length ? values : ["Not provided"]).map((value) => (
           <span className="tag" key={value}>
-            {value}
+            {displayPhrase(value)}
           </span>
         ))}
       </div>
     </div>
   );
+}
+
+function displayPhrase(value: string) {
+  const specialTerms: Record<string, string> = {
+    ai: "AI",
+    "ui/ux": "UI/UX",
+    html: "HTML",
+    css: "CSS",
+    sql: "SQL",
+  };
+
+  return value
+    .split(" ")
+    .map((word) => specialTerms[word.toLowerCase()] ?? word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
 function EmptyProfile() {

@@ -27,6 +27,12 @@ SKILL_ALIASES = {
     "cybersecurity": {"cybersecurity", "security", "network security", "soc"},
     "ui/ux": {"ui/ux", "ux", "ui", "product design", "figma"},
     "entrepreneurship": {"entrepreneurship", "startup", "founder", "business"},
+    "business": {"business", "entrepreneurship", "marketing", "sales", "operations", "management"},
+    "marketing": {"marketing", "digital marketing", "content strategy", "social media", "brand"},
+    "finance": {"finance", "accounting", "financial analysis", "investment", "banking"},
+    "healthcare": {"healthcare", "public health", "nursing", "clinical", "patient care"},
+    "education": {"education", "teaching", "instructional design", "tutoring", "curriculum"},
+    "creative": {"creative", "content creation", "writing", "video", "storytelling", "media"},
     "freelancing": {"freelancing", "remote work", "client work", "upwork"},
     "academic research": {"academic research", "research", "publication", "graduate school"},
 }
@@ -185,4 +191,3 @@ def _normalize_terms(values: Iterable[str]) -> set[str]:
         terms.add(lowered)
         terms.update(token for token in re.split(r"[^a-z0-9+#/.-]+", lowered) if token)
     return terms
-

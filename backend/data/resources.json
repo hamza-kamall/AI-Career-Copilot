@@ -142,6 +142,77 @@
     "estimated_duration": "8 weeks",
     "url": "https://online.stanford.edu/courses/som-y0010-writing-sciences",
     "description": "Research writing course for clearer scientific communication and publication preparation."
+  },
+  {
+    "id": "res-marketing-001",
+    "title": "Google Digital Marketing and E-commerce Certificate",
+    "skill": "digital marketing",
+    "level": "beginner",
+    "resource_type": "Course",
+    "provider": "Google",
+    "cost_type": "low-cost",
+    "estimated_duration": "24 weeks",
+    "url": "https://www.coursera.org/professional-certificates/google-digital-marketing-ecommerce",
+    "description": "Career-oriented program covering marketing funnels, email, analytics, e-commerce, and portfolio-ready campaign work."
+  },
+  {
+    "id": "res-finance-001",
+    "title": "Introduction to Corporate Finance",
+    "skill": "finance",
+    "level": "beginner",
+    "resource_type": "Course",
+    "provider": "Wharton Online",
+    "cost_type": "low-cost",
+    "estimated_duration": "4 weeks",
+    "url": "https://www.coursera.org/learn/wharton-finance",
+    "description": "Foundational finance course covering valuation, risk, return, and capital budgeting concepts."
+  },
+  {
+    "id": "res-business-001",
+    "title": "Career Essentials in Business Analysis",
+    "skill": "business analysis",
+    "level": "beginner",
+    "resource_type": "Course",
+    "provider": "Microsoft and LinkedIn",
+    "cost_type": "free",
+    "estimated_duration": "6 weeks",
+    "url": "https://opportunity.linkedin.com/skills-for-in-demand-jobs/business-analyst",
+    "description": "Introductory business analysis path focused on requirements, stakeholder communication, and practical workplace skills."
+  },
+  {
+    "id": "res-health-001",
+    "title": "Essentials of Global Health",
+    "skill": "public health",
+    "level": "beginner",
+    "resource_type": "Course",
+    "provider": "Yale University",
+    "cost_type": "low-cost",
+    "estimated_duration": "10 weeks",
+    "url": "https://www.coursera.org/learn/essentials-global-health",
+    "description": "Public health introduction covering health systems, disease burden, equity, and global health career context."
+  },
+  {
+    "id": "res-education-001",
+    "title": "Learning to Teach Online",
+    "skill": "education",
+    "level": "beginner",
+    "resource_type": "Course",
+    "provider": "UNSW Sydney",
+    "cost_type": "low-cost",
+    "estimated_duration": "6 weeks",
+    "url": "https://www.coursera.org/learn/teach-online",
+    "description": "Practical course for planning learning experiences, using digital tools, and improving online instruction."
+  },
+  {
+    "id": "res-creative-001",
+    "title": "Content Marketing Certification",
+    "skill": "content creation",
+    "level": "beginner",
+    "resource_type": "Course",
+    "provider": "HubSpot Academy",
+    "cost_type": "free",
+    "estimated_duration": "1 week",
+    "url": "https://academy.hubspot.com/courses/content-marketing",
+    "description": "Short course on content strategy, storytelling, topic planning, and measuring content performance."
   }
 ]
-

@@ -1,2 +1,1 @@
-"""AI Career Pilot application package."""
-
+"""BootCamp.AI application package."""

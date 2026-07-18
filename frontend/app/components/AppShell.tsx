@@ -4,7 +4,8 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { isDemoAuthenticated, setDemoAuthenticated } from "../lib/storage";
+import { BrandLogo } from "./BrandLogo";
+import { getDemoRole, isDemoAuthenticated, signOutDemo } from "../lib/storage";
 
 const navItems = [
   { href: "/profile-builder", label: "Profile Builder", icon: "PB" },
@@ -16,14 +17,26 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   const [ready, setReady] = useState(false);
+  const [role, setRole] = useState<"learner" | "admin">("learner");
 
   useEffect(() => {
     if (!isDemoAuthenticated()) {
       router.replace("/");
       return;
     }
+    const currentRole = getDemoRole();
+    setRole(currentRole);
+    if (pathname.startsWith("/admin") && currentRole !== "admin") {
+      router.replace("/profile-builder");
+      return;
+    }
     setReady(true);
-  }, [router]);
+  }, [pathname, router]);
+
+  const visibleNavItems =
+    role === "admin"
+      ? [{ href: "/admin/mentors", label: "Manage Mentors", icon: "AD" }]
+      : navItems;
 
   if (!ready) {
     return <main className="loading-screen">Loading workspace...</main>;
@@ -33,11 +46,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     <div className="app-shell">
       <aside className="sidebar">
         <Link className="brand" href="/profile-builder">
-          <span className="brand-mark">A</span>
-          <span>AI Career Copilot</span>
+          <BrandLogo compact />
         </Link>
         <nav className="nav-list" aria-label="Primary navigation">
-          {navItems.map((item) => (
+          {visibleNavItems.map((item) => (
             <Link
               className={`nav-item ${pathname === item.href ? "active" : ""}`}
               href={item.href}
@@ -50,23 +62,27 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </nav>
         <div className="sidebar-note">
           <strong>Demo MVP</strong>
-          <span>Profile, mentors, and roadmap are powered by the local API.</span>
+          <span>
+            {role === "admin"
+              ? "Manage the local mentor dataset for the demo."
+              : "Profile, mentors, and roadmap are powered by the local API."}
+          </span>
         </div>
       </aside>
 
       <div className="workspace">
         <header className="topbar">
           <div>
-            <p className="eyebrow">Career planning workspace</p>
+            <p className="eyebrow">BootCamp.AI workspace</p>
             <h1>{titleForPath(pathname)}</h1>
           </div>
           <div className="user-chip">
             <span className="avatar">HK</span>
-            <span>Demo User</span>
+            <span>{role === "admin" ? "Admin Demo" : "Demo User"}</span>
             <button
               className="ghost-button small"
               onClick={() => {
-                setDemoAuthenticated(false);
+                signOutDemo();
                 router.replace("/");
               }}
               type="button"
@@ -87,6 +103,9 @@ function titleForPath(pathname: string) {
   }
   if (pathname === "/roadmap") {
     return "Career Roadmap";
+  }
+  if (pathname === "/admin/mentors") {
+    return "Mentor Admin";
   }
   return "AI Profile Builder";
 }

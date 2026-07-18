@@ -1,2 +1,1 @@
-"""Business services for AI Career Pilot."""
-
+"""Business services for BootCamp.AI."""

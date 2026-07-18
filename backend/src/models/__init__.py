@@ -1,4 +1,4 @@
-"""Pydantic models for AI Career Pilot."""
+"""Pydantic models for BootCamp.AI."""
 
 from src.models.mentor import Mentor, MentorMatch
 from src.models.profile import BudgetPreference, ExperienceLevel, UserProfile
@@ -18,4 +18,3 @@ __all__ = [
     "UserProfile",
     "WeeklyTask",
 ]
-

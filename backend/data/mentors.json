@@ -4,14 +4,36 @@
     "name": "Ayesha Khan",
     "job_title": "Senior Machine Learning Engineer",
     "bio": "Builds computer vision and recommendation systems, with a track record mentoring university students into AI internships.",
-    "expertise": ["machine learning", "deep learning", "Python", "portfolio projects"],
-    "industries": ["AI", "software engineering", "internships"],
+    "expertise": [
+      "machine learning",
+      "deep learning",
+      "Python",
+      "portfolio projects"
+    ],
+    "industries": [
+      "AI",
+      "software engineering",
+      "internships"
+    ],
     "years_experience": 8,
-    "supported_levels": ["beginner", "intermediate"],
-    "languages": ["English", "Urdu"],
-    "available_hours": ["moderate", "intensive"],
+    "supported_levels": [
+      "beginner",
+      "intermediate"
+    ],
+    "languages": [
+      "English",
+      "Urdu"
+    ],
+    "available_hours": [
+      "moderate",
+      "intensive"
+    ],
     "price_category": "low-cost",
-    "mentoring_style": ["structured", "project-based", "student-friendly"],
+    "mentoring_style": [
+      "structured",
+      "project-based",
+      "student-friendly"
+    ],
     "profile_image": null
   },
   {
@@ -19,14 +41,34 @@
     "name": "Daniel Reed",
     "job_title": "Frontend Engineering Lead",
     "bio": "Leads React teams and helps learners turn HTML, CSS, and JavaScript foundations into portfolio-ready web apps.",
-    "expertise": ["frontend", "React", "JavaScript", "web development"],
-    "industries": ["web development", "SaaS"],
+    "expertise": [
+      "frontend",
+      "React",
+      "JavaScript",
+      "web development"
+    ],
+    "industries": [
+      "web development",
+      "SaaS"
+    ],
     "years_experience": 10,
-    "supported_levels": ["beginner", "intermediate", "advanced"],
-    "languages": ["English"],
-    "available_hours": ["light", "moderate"],
+    "supported_levels": [
+      "beginner",
+      "intermediate",
+      "advanced"
+    ],
+    "languages": [
+      "English"
+    ],
+    "available_hours": [
+      "light",
+      "moderate"
+    ],
     "price_category": "premium",
-    "mentoring_style": ["code review", "portfolio-focused"],
+    "mentoring_style": [
+      "code review",
+      "portfolio-focused"
+    ],
     "profile_image": null
   },
   {
@@ -34,14 +76,35 @@
     "name": "Mariam Siddiqui",
     "job_title": "Data Analytics Manager",
     "bio": "Specializes in SQL, dashboards, and analytics career transitions for non-technical professionals.",
-    "expertise": ["data analytics", "SQL", "Excel", "dashboards"],
-    "industries": ["business intelligence", "finance", "career switch"],
+    "expertise": [
+      "data analytics",
+      "SQL",
+      "Excel",
+      "dashboards"
+    ],
+    "industries": [
+      "business intelligence",
+      "finance",
+      "career switch"
+    ],
     "years_experience": 9,
-    "supported_levels": ["beginner", "intermediate"],
-    "languages": ["English", "Urdu"],
-    "available_hours": ["light", "moderate"],
+    "supported_levels": [
+      "beginner",
+      "intermediate"
+    ],
+    "languages": [
+      "English",
+      "Urdu"
+    ],
+    "available_hours": [
+      "light",
+      "moderate"
+    ],
     "price_category": "low-cost",
-    "mentoring_style": ["practical", "career-transition"],
+    "mentoring_style": [
+      "practical",
+      "career-transition"
+    ],
     "profile_image": null
   },
   {
@@ -49,14 +112,33 @@
     "name": "Omar Farooq",
     "job_title": "Cybersecurity Consultant",
     "bio": "Guides learners through networking, SOC fundamentals, hands-on labs, and entry-level cybersecurity paths.",
-    "expertise": ["cybersecurity", "network security", "SOC", "Linux"],
-    "industries": ["security", "consulting"],
+    "expertise": [
+      "cybersecurity",
+      "network security",
+      "SOC",
+      "Linux"
+    ],
+    "industries": [
+      "security",
+      "consulting"
+    ],
     "years_experience": 7,
-    "supported_levels": ["beginner", "intermediate"],
-    "languages": ["English", "Urdu"],
-    "available_hours": ["moderate"],
+    "supported_levels": [
+      "beginner",
+      "intermediate"
+    ],
+    "languages": [
+      "English",
+      "Urdu"
+    ],
+    "available_hours": [
+      "moderate"
+    ],
     "price_category": "free",
-    "mentoring_style": ["hands-on", "lab-based"],
+    "mentoring_style": [
+      "hands-on",
+      "lab-based"
+    ],
     "profile_image": null
   },
   {
@@ -64,14 +146,35 @@
     "name": "Nina Patel",
     "job_title": "Senior Product Designer",
     "bio": "Mentors early designers in user research, UX case studies, Figma workflows, and portfolio storytelling.",
-    "expertise": ["UI/UX", "Figma", "user research", "product design"],
-    "industries": ["design", "consumer apps"],
+    "expertise": [
+      "UI/UX",
+      "Figma",
+      "user research",
+      "product design"
+    ],
+    "industries": [
+      "design",
+      "consumer apps"
+    ],
     "years_experience": 11,
-    "supported_levels": ["beginner", "intermediate", "advanced"],
-    "languages": ["English", "Hindi"],
-    "available_hours": ["light", "moderate"],
+    "supported_levels": [
+      "beginner",
+      "intermediate",
+      "advanced"
+    ],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "available_hours": [
+      "light",
+      "moderate"
+    ],
     "price_category": "premium",
-    "mentoring_style": ["portfolio-focused", "feedback-heavy"],
+    "mentoring_style": [
+      "portfolio-focused",
+      "feedback-heavy"
+    ],
     "profile_image": null
   },
   {
@@ -79,14 +182,33 @@
     "name": "Bilal Ahmed",
     "job_title": "Startup Founder and Product Advisor",
     "bio": "Helps aspiring founders validate ideas, define MVPs, and learn practical entrepreneurship fundamentals.",
-    "expertise": ["entrepreneurship", "startup", "product strategy", "MVP"],
-    "industries": ["startup", "education technology"],
+    "expertise": [
+      "entrepreneurship",
+      "startup",
+      "product strategy",
+      "MVP"
+    ],
+    "industries": [
+      "startup",
+      "education technology"
+    ],
     "years_experience": 12,
-    "supported_levels": ["beginner", "intermediate"],
-    "languages": ["English", "Urdu"],
-    "available_hours": ["light"],
+    "supported_levels": [
+      "beginner",
+      "intermediate"
+    ],
+    "languages": [
+      "English",
+      "Urdu"
+    ],
+    "available_hours": [
+      "light"
+    ],
     "price_category": "low-cost",
-    "mentoring_style": ["strategic", "accountability"],
+    "mentoring_style": [
+      "strategic",
+      "accountability"
+    ],
     "profile_image": null
   },
   {
@@ -94,14 +216,34 @@
     "name": "Sara Malik",
     "job_title": "Freelance Web Developer",
     "bio": "Coaches new freelancers on client discovery, proposals, delivery habits, and small-business web projects.",
-    "expertise": ["freelancing", "web development", "client work", "WordPress"],
-    "industries": ["freelancing", "small business"],
+    "expertise": [
+      "freelancing",
+      "web development",
+      "client work",
+      "WordPress"
+    ],
+    "industries": [
+      "freelancing",
+      "small business"
+    ],
     "years_experience": 6,
-    "supported_levels": ["beginner", "intermediate"],
-    "languages": ["English", "Urdu"],
-    "available_hours": ["light", "moderate"],
+    "supported_levels": [
+      "beginner",
+      "intermediate"
+    ],
+    "languages": [
+      "English",
+      "Urdu"
+    ],
+    "available_hours": [
+      "light",
+      "moderate"
+    ],
     "price_category": "free",
-    "mentoring_style": ["practical", "accountability"],
+    "mentoring_style": [
+      "practical",
+      "accountability"
+    ],
     "profile_image": null
   },
   {
@@ -109,14 +251,34 @@
     "name": "Dr. Hassan Raza",
     "job_title": "Applied AI Research Scientist",
     "bio": "Supports students preparing for research assistantships, papers, graduate school, and reproducible ML experiments.",
-    "expertise": ["academic research", "machine learning", "Python", "technical writing"],
-    "industries": ["research", "AI", "higher education"],
+    "expertise": [
+      "academic research",
+      "machine learning",
+      "Python",
+      "technical writing"
+    ],
+    "industries": [
+      "research",
+      "AI",
+      "higher education"
+    ],
     "years_experience": 14,
-    "supported_levels": ["intermediate", "advanced"],
-    "languages": ["English", "Urdu"],
-    "available_hours": ["moderate"],
+    "supported_levels": [
+      "intermediate",
+      "advanced"
+    ],
+    "languages": [
+      "English",
+      "Urdu"
+    ],
+    "available_hours": [
+      "moderate"
+    ],
     "price_category": "premium",
-    "mentoring_style": ["research-oriented", "rigorous"],
+    "mentoring_style": [
+      "research-oriented",
+      "rigorous"
+    ],
     "profile_image": null
   },
   {
@@ -124,14 +286,33 @@
     "name": "Liam Chen",
     "job_title": "Backend Platform Engineer",
     "bio": "Mentors developers in APIs, databases, testing, and deployable backend systems for production teams.",
-    "expertise": ["backend", "Python", "FastAPI", "databases"],
-    "industries": ["software engineering", "SaaS"],
+    "expertise": [
+      "backend",
+      "Python",
+      "FastAPI",
+      "databases"
+    ],
+    "industries": [
+      "software engineering",
+      "SaaS"
+    ],
     "years_experience": 9,
-    "supported_levels": ["intermediate", "advanced"],
-    "languages": ["English"],
-    "available_hours": ["moderate", "intensive"],
+    "supported_levels": [
+      "intermediate",
+      "advanced"
+    ],
+    "languages": [
+      "English"
+    ],
+    "available_hours": [
+      "moderate",
+      "intensive"
+    ],
     "price_category": "low-cost",
-    "mentoring_style": ["systems-focused", "code review"],
+    "mentoring_style": [
+      "systems-focused",
+      "code review"
+    ],
     "profile_image": null
   },
   {
@@ -139,15 +320,214 @@
     "name": "Fatima Noor",
     "job_title": "AI Product Manager",
     "bio": "Helps technical learners connect AI skills with product thinking, user problems, and internship narratives.",
-    "expertise": ["AI", "product strategy", "communication", "portfolio projects"],
-    "industries": ["AI", "product management", "internships"],
+    "expertise": [
+      "AI",
+      "product strategy",
+      "communication",
+      "portfolio projects"
+    ],
+    "industries": [
+      "AI",
+      "product management",
+      "internships"
+    ],
     "years_experience": 8,
-    "supported_levels": ["beginner", "intermediate"],
-    "languages": ["English", "Urdu"],
-    "available_hours": ["light", "moderate"],
+    "supported_levels": [
+      "beginner",
+      "intermediate"
+    ],
+    "languages": [
+      "English",
+      "Urdu"
+    ],
+    "available_hours": [
+      "light",
+      "moderate"
+    ],
     "price_category": "free",
-    "mentoring_style": ["student-friendly", "strategic"],
+    "mentoring_style": [
+      "student-friendly",
+      "strategic"
+    ],
+    "profile_image": null
+  },
+  {
+    "id": "mentor-marketing-001",
+    "name": "Hina Qureshi",
+    "job_title": "Digital Marketing Strategist",
+    "bio": "Helps learners build practical marketing portfolios through content calendars, campaign analysis, SEO basics, and brand storytelling.",
+    "expertise": [
+      "marketing",
+      "digital marketing",
+      "content strategy",
+      "SEO"
+    ],
+    "industries": [
+      "marketing",
+      "consumer brands",
+      "small business"
+    ],
+    "years_experience": 9,
+    "supported_levels": [
+      "beginner",
+      "intermediate"
+    ],
+    "languages": [
+      "English",
+      "Urdu"
+    ],
+    "available_hours": [
+      "light",
+      "moderate"
+    ],
+    "price_category": "low-cost",
+    "mentoring_style": [
+      "portfolio-focused",
+      "practical"
+    ],
+    "profile_image": null
+  },
+  {
+    "id": "mentor-finance-001",
+    "name": "Ahmed Mir",
+    "job_title": "Financial Planning Analyst",
+    "bio": "Coaches students on Excel modeling, financial analysis fundamentals, interview cases, and entry-level finance role preparation.",
+    "expertise": [
+      "finance",
+      "financial analysis",
+      "Excel",
+      "business communication"
+    ],
+    "industries": [
+      "finance",
+      "banking",
+      "corporate planning"
+    ],
+    "years_experience": 8,
+    "supported_levels": [
+      "beginner",
+      "intermediate"
+    ],
+    "languages": [
+      "English",
+      "Urdu"
+    ],
+    "available_hours": [
+      "moderate"
+    ],
+    "price_category": "low-cost",
+    "mentoring_style": [
+      "structured",
+      "interview-focused"
+    ],
+    "profile_image": null
+  },
+  {
+    "id": "mentor-health-001",
+    "name": "Dr. Sana Iqbal",
+    "job_title": "Public Health Program Lead",
+    "bio": "Guides learners interested in healthcare, public health, patient operations, and community impact careers.",
+    "expertise": [
+      "healthcare",
+      "public health",
+      "program management",
+      "research"
+    ],
+    "industries": [
+      "healthcare",
+      "public health",
+      "nonprofit"
+    ],
+    "years_experience": 13,
+    "supported_levels": [
+      "beginner",
+      "intermediate",
+      "advanced"
+    ],
+    "languages": [
+      "English",
+      "Urdu"
+    ],
+    "available_hours": [
+      "light",
+      "moderate"
+    ],
+    "price_category": "premium",
+    "mentoring_style": [
+      "strategic",
+      "student-friendly"
+    ],
+    "profile_image": null
+  },
+  {
+    "id": "mentor-education-001",
+    "name": "Meera Shah",
+    "job_title": "Learning Experience Designer",
+    "bio": "Mentors aspiring educators and instructional designers on lesson planning, facilitation, learning design, and teaching portfolios.",
+    "expertise": [
+      "education",
+      "teaching",
+      "instructional design",
+      "curriculum"
+    ],
+    "industries": [
+      "education",
+      "edtech",
+      "training"
+    ],
+    "years_experience": 10,
+    "supported_levels": [
+      "beginner",
+      "intermediate"
+    ],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "available_hours": [
+      "light"
+    ],
+    "price_category": "free",
+    "mentoring_style": [
+      "feedback-heavy",
+      "portfolio-focused"
+    ],
+    "profile_image": null
+  },
+  {
+    "id": "mentor-creative-001",
+    "name": "Zara Sheikh",
+    "job_title": "Content Producer and Creative Lead",
+    "bio": "Supports creators with writing samples, video concepts, audience research, creative briefs, and freelance-ready portfolios.",
+    "expertise": [
+      "creative",
+      "content creation",
+      "writing",
+      "storytelling"
+    ],
+    "industries": [
+      "media",
+      "creative",
+      "freelancing"
+    ],
+    "years_experience": 7,
+    "supported_levels": [
+      "beginner",
+      "intermediate"
+    ],
+    "languages": [
+      "English",
+      "Urdu"
+    ],
+    "available_hours": [
+      "light",
+      "moderate"
+    ],
+    "price_category": "free",
+    "mentoring_style": [
+      "practical",
+      "portfolio-focused"
+    ],
     "profile_image": null
   }
 ]
-

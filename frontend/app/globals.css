@@ -33,6 +33,7 @@ body {
 
 button,
 input,
+select,
 textarea {
   font: inherit;
 }
@@ -112,6 +113,7 @@ label {
 }
 
 input,
+select,
 textarea {
   width: 100%;
   border: 1px solid var(--line);
@@ -127,6 +129,7 @@ textarea {
 }
 
 input:focus,
+select:focus,
 textarea:focus {
   border-color: var(--purple);
   box-shadow: 0 0 0 3px rgba(113, 52, 243, 0.14);
@@ -215,6 +218,30 @@ textarea:focus {
   align-items: center;
   gap: 10px;
   font-weight: 900;
+  line-height: 0;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 190px;
+  max-width: 100%;
+  height: 32px;
+  overflow: hidden;
+}
+
+.brand-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.brand-logo-compact {
+  width: 178px;
+  height: 30px;
 }
 
 .brand-mark,
@@ -510,6 +537,11 @@ textarea:focus {
   color: var(--danger);
 }
 
+.success-text {
+  color: #087443;
+  font-weight: 800;
+}
+
 .mentor-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -569,6 +601,89 @@ textarea:focus {
 
 .full {
   width: 100%;
+}
+
+.schedule-confirmation {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  border-color: rgba(3, 230, 118, 0.52);
+}
+
+.schedule-confirmation p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.schedule-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid rgba(113, 52, 243, 0.18);
+  border-radius: 8px;
+  background: #fbfdfc;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.9fr) minmax(420px, 1.1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.admin-list-panel,
+.admin-form-panel {
+  min-width: 0;
+}
+
+.admin-table {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-row {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) minmax(160px, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfc;
+}
+
+.admin-row div:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.admin-row span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.admin-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.danger-button {
+  color: var(--danger);
+}
+
+.mentor-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.wide-field {
+  grid-column: 1 / -1;
 }
 
 .roadmap-hero {
@@ -665,11 +780,20 @@ textarea:focus {
 .marketing-brand {
   color: #ffffff;
   flex: 0 0 auto;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
 }
 
-.marketing-brand .brand-mark {
-  background: var(--green);
-  color: var(--navy);
+.marketing-brand .brand-logo {
+  width: clamp(184px, 18vw, 232px);
+  height: 38px;
+}
+
+.marketing-brand .brand-logo img {
+  height: 100%;
+  object-fit: contain;
 }
 
 .marketing-links,
@@ -987,7 +1111,8 @@ textarea:focus {
 
   .two-column,
   .roadmap-layout,
-  .hero-grid {
+  .hero-grid,
+  .admin-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1014,7 +1139,8 @@ textarea:focus {
 
   .topbar,
   .roadmap-hero,
-  .section-heading {
+  .section-heading,
+  .schedule-confirmation {
     align-items: stretch;
     flex-direction: column;
   }
@@ -1026,10 +1152,13 @@ textarea:focus {
   .profile-grid,
   .mentor-grid,
   .mentor-meta,
+  .schedule-form,
   .roadmap-detail-grid,
   .roadmap-stats,
   .feature-grid,
-  .career-card-grid {
+  .career-card-grid,
+  .admin-row,
+  .mentor-form {
     grid-template-columns: 1fr;
   }
 
@@ -1054,6 +1183,10 @@ textarea:focus {
 
   .marketing-links {
     gap: 14px;
+  }
+
+  .marketing-brand {
+    width: fit-content;
   }
 
   .nav-actions {

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 import { AppShell } from "../components/AppShell";
 import { recommendMentors } from "../lib/api";
@@ -13,6 +13,14 @@ export default function MentorsPage() {
   const [matches, setMatches] = useState<MentorMatch[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [schedulingMentorId, setSchedulingMentorId] = useState<string | null>(null);
+  const [scheduledSession, setScheduledSession] = useState<ScheduledSession | null>(null);
+  const [scheduleForm, setScheduleForm] = useState({
+    date: "",
+    time: "",
+    format: "Video call",
+    notes: "",
+  });
 
   useEffect(() => {
     const savedProfile = loadProfile();
@@ -58,7 +66,10 @@ export default function MentorsPage() {
         {error && <p className="error-text">{error}</p>}
 
         <section className="mentor-grid">
-          {matches.map((match) => (
+          {matches.map((match) => {
+            const isScheduling = schedulingMentorId === match.mentor.id;
+
+            return (
             <article className="mentor-card" key={match.mentor.id}>
               <div className="mentor-header">
                 <div className="avatar large">{initials(match.mentor.name)}</div>
@@ -91,16 +102,126 @@ export default function MentorsPage() {
                 </div>
               </dl>
               <p className="explanation">{match.explanation}</p>
-              <Link className="secondary-button full" href="/roadmap">
-                Continue to Roadmap
-              </Link>
+              <button
+                className="secondary-button full"
+                onClick={() => {
+                  setSchedulingMentorId(match.mentor.id);
+                  setScheduledSession(null);
+                }}
+                type="button"
+              >
+                {isScheduling ? "Choose session time" : "Schedule 1-hour mentorship session"}
+              </button>
+
+              {isScheduling && (
+                <form className="schedule-form" onSubmit={(event) => handleScheduleSubmit(event, match)}>
+                  <label>
+                    Date
+                    <input
+                      min={new Date().toISOString().split("T")[0]}
+                      onChange={(event) => setScheduleForm({ ...scheduleForm, date: event.target.value })}
+                      required
+                      type="date"
+                      value={scheduleForm.date}
+                    />
+                  </label>
+                  <label>
+                    Time
+                    <input
+                      onChange={(event) => setScheduleForm({ ...scheduleForm, time: event.target.value })}
+                      required
+                      type="time"
+                      value={scheduleForm.time}
+                    />
+                  </label>
+                  <label>
+                    Session type
+                    <select
+                      onChange={(event) => setScheduleForm({ ...scheduleForm, format: event.target.value })}
+                      value={scheduleForm.format}
+                    >
+                      <option>Video call</option>
+                      <option>Phone call</option>
+                      <option>In-person</option>
+                    </select>
+                  </label>
+                  <label className="wide-field">
+                    Notes for your mentor
+                    <textarea
+                      onChange={(event) => setScheduleForm({ ...scheduleForm, notes: event.target.value })}
+                      placeholder="Share a goal, question, or topic for the session."
+                      rows={3}
+                      value={scheduleForm.notes}
+                    />
+                  </label>
+                  <div className="button-row wide-field">
+                    <button className="primary-button" type="submit">
+                      Request session
+                    </button>
+                    <button
+                      className="ghost-button"
+                      onClick={() => setSchedulingMentorId(null)}
+                      type="button"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              )}
             </article>
-          ))}
+            );
+          })}
         </section>
+
+        {scheduledSession && (
+          <section className="panel schedule-confirmation" role="status">
+            <div>
+              <p className="eyebrow">Mentorship session</p>
+              <h2>Session request sent</h2>
+              <p>
+                Your {scheduledSession.format.toLowerCase()} with {scheduledSession.mentorName} is
+                requested for {formatSessionDate(scheduledSession.date)} at {scheduledSession.time}.
+              </p>
+            </div>
+            <button
+              className="ghost-button small"
+              onClick={() => setScheduledSession(null)}
+              type="button"
+            >
+              Dismiss
+            </button>
+          </section>
+        )}
       </main>
     </AppShell>
   );
+
+  function handleScheduleSubmit(event: FormEvent<HTMLFormElement>, match: MentorMatch) {
+    event.preventDefault();
+    setScheduledSession({
+      mentorName: match.mentor.name,
+      date: scheduleForm.date,
+      time: scheduleForm.time,
+      format: scheduleForm.format,
+      notes: scheduleForm.notes,
+    });
+    setSchedulingMentorId(null);
+    setScheduleForm({
+      date: "",
+      time: "",
+      format: "Video call",
+      notes: "",
+    });
+  }
 }
+
+type ScheduledSession = {
+  mentorName: string;
+  date: string;
+  time: string;
+  format: string;
+  notes: string;
+};
 
 function EmptyRoute({
   title,
@@ -131,4 +252,12 @@ function initials(name: string) {
     .join("")
     .slice(0, 2)
     .toUpperCase();
+}
+
+function formatSessionDate(date: string) {
+  return new Intl.DateTimeFormat("en", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  }).format(new Date(`${date}T00:00:00`));
 }

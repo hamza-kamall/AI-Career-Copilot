@@ -1,5 +1,5 @@
 {
-  "name": "ai-career-pilot",
+  "name": "bootcamp-ai",
   "private": true,
   "scripts": {
     "build": "node scripts/build-sites.mjs",

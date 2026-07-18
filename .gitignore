@@ -12,9 +12,10 @@ __pycache__/
 frontend/.next/
 frontend/node_modules/
 frontend/out/
+frontend/tsconfig.tsbuildinfo
+.pnpm-store/
 
 # Build and editor noise
 dist/
 build/
 .DS_Store
-
