@@ -1,0 +1,2 @@
+Extract a user career profile from natural language. Return only valid JSON matching the UserProfile schema.
+

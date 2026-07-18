@@ -1,0 +1,147 @@
+[
+  {
+    "id": "res-python-001",
+    "title": "Python for Everybody",
+    "skill": "Python",
+    "level": "beginner",
+    "resource_type": "Course",
+    "provider": "University of Michigan",
+    "cost_type": "free",
+    "estimated_duration": "8 weeks",
+    "url": "https://www.py4e.com/",
+    "description": "Beginner-friendly Python programming course with exercises and practical examples."
+  },
+  {
+    "id": "res-ml-001",
+    "title": "Machine Learning Specialization",
+    "skill": "machine learning",
+    "level": "beginner",
+    "resource_type": "Course",
+    "provider": "DeepLearning.AI",
+    "cost_type": "low-cost",
+    "estimated_duration": "10 weeks",
+    "url": "https://www.coursera.org/specializations/machine-learning-introduction",
+    "description": "Structured introduction to supervised learning, unsupervised learning, and recommender systems."
+  },
+  {
+    "id": "res-dl-001",
+    "title": "Dive into Deep Learning",
+    "skill": "deep learning",
+    "level": "intermediate",
+    "resource_type": "Book",
+    "provider": "D2L.ai",
+    "cost_type": "free",
+    "estimated_duration": "8 weeks",
+    "url": "https://d2l.ai/",
+    "description": "Interactive deep learning book with code-first chapters and modern neural network foundations."
+  },
+  {
+    "id": "res-frontend-001",
+    "title": "MDN Learn Web Development",
+    "skill": "frontend",
+    "level": "beginner",
+    "resource_type": "Documentation",
+    "provider": "Mozilla",
+    "cost_type": "free",
+    "estimated_duration": "6 weeks",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn",
+    "description": "Comprehensive web development curriculum covering HTML, CSS, JavaScript, and accessibility."
+  },
+  {
+    "id": "res-react-001",
+    "title": "React Documentation Tutorial",
+    "skill": "React",
+    "level": "beginner",
+    "resource_type": "Tutorial",
+    "provider": "React",
+    "cost_type": "free",
+    "estimated_duration": "1 week",
+    "url": "https://react.dev/learn",
+    "description": "Official React learning path for components, state, and interactive user interfaces."
+  },
+  {
+    "id": "res-sql-001",
+    "title": "SQLBolt",
+    "skill": "SQL",
+    "level": "beginner",
+    "resource_type": "Practice platform",
+    "provider": "SQLBolt",
+    "cost_type": "free",
+    "estimated_duration": "1 week",
+    "url": "https://sqlbolt.com/",
+    "description": "Interactive SQL lessons and exercises for querying relational data."
+  },
+  {
+    "id": "res-analytics-001",
+    "title": "Google Data Analytics Professional Certificate",
+    "skill": "data analytics",
+    "level": "beginner",
+    "resource_type": "Course",
+    "provider": "Google",
+    "cost_type": "low-cost",
+    "estimated_duration": "24 weeks",
+    "url": "https://www.coursera.org/professional-certificates/google-data-analytics",
+    "description": "Career-oriented data analytics program covering spreadsheets, SQL, visualization, and case studies."
+  },
+  {
+    "id": "res-cyber-001",
+    "title": "TryHackMe Pre Security",
+    "skill": "cybersecurity",
+    "level": "beginner",
+    "resource_type": "Practice platform",
+    "provider": "TryHackMe",
+    "cost_type": "free",
+    "estimated_duration": "4 weeks",
+    "url": "https://tryhackme.com/path/outline/presecurity",
+    "description": "Hands-on introduction to networking, web basics, Linux, and security fundamentals."
+  },
+  {
+    "id": "res-ux-001",
+    "title": "Figma Learn Design",
+    "skill": "UI/UX",
+    "level": "beginner",
+    "resource_type": "Tutorial",
+    "provider": "Figma",
+    "cost_type": "free",
+    "estimated_duration": "2 weeks",
+    "url": "https://www.figma.com/resource-library/learn-design/",
+    "description": "Practical lessons on interface design, collaboration, prototyping, and design fundamentals."
+  },
+  {
+    "id": "res-startup-001",
+    "title": "Startup School",
+    "skill": "entrepreneurship",
+    "level": "beginner",
+    "resource_type": "Community",
+    "provider": "Y Combinator",
+    "cost_type": "free",
+    "estimated_duration": "8 weeks",
+    "url": "https://www.startupschool.org/",
+    "description": "Founder-focused lessons and community support for validating and building startups."
+  },
+  {
+    "id": "res-freelance-001",
+    "title": "Freelance Toolkit",
+    "skill": "freelancing",
+    "level": "beginner",
+    "resource_type": "Project guide",
+    "provider": "freeCodeCamp",
+    "cost_type": "free",
+    "estimated_duration": "2 weeks",
+    "url": "https://www.freecodecamp.org/news/freelance-web-developer-guide/",
+    "description": "Guide to positioning, finding clients, pricing work, and delivering web development projects."
+  },
+  {
+    "id": "res-research-001",
+    "title": "Writing in the Sciences",
+    "skill": "academic research",
+    "level": "intermediate",
+    "resource_type": "Course",
+    "provider": "Stanford Online",
+    "cost_type": "free",
+    "estimated_duration": "8 weeks",
+    "url": "https://online.stanford.edu/courses/som-y0010-writing-sciences",
+    "description": "Research writing course for clearer scientific communication and publication preparation."
+  }
+]
+
