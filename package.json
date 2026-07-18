@@ -1,0 +1,8 @@
+{
+  "name": "ai-career-pilot",
+  "private": true,
+  "scripts": {
+    "build": "cd frontend && pnpm install --frozen-lockfile && pnpm run build",
+    "start": "cd frontend && pnpm run start"
+  }
+}
