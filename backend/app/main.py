@@ -2,8 +2,10 @@
 
 from fastapi import FastAPI
 
+from src.models.api import ProfileExtractionRequest, ProfileExtractionResponse
 from src.repositories.mentor_repository import load_mentors
 from src.repositories.resource_repository import load_resources
+from src.services.profile_service import extract_user_profile, get_follow_up_questions
 
 
 app = FastAPI(
@@ -27,3 +29,12 @@ def demo_data_summary() -> dict[str, int]:
         "resources": len(load_resources()),
     }
 
+
+@app.post("/profiles/extract", response_model=ProfileExtractionResponse)
+def extract_profile(request: ProfileExtractionRequest) -> ProfileExtractionResponse:
+    """Convert natural-language user details into a validated profile model."""
+    profile = extract_user_profile(request.details)
+    return ProfileExtractionResponse(
+        profile=profile,
+        follow_up_questions=get_follow_up_questions(profile),
+    )
